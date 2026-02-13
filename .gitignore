@@ -1,0 +1,7 @@
+# Cache do Sistema e do VS Code
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Se algum dia voltares a usar o Vercel CLI localmente
+.vercel/

@@ -18,50 +18,31 @@
     <main class="container">
         <div class="card">
             <div class="line-decorator"></div>
-            <h3>🚇 Consulta de Horários</h3>
+            <h3>Consulta de Horários</h3>
             
-            <!-- ESTAÇÃO DE ORIGEM -->
             <div class="form-group">
-                <label>📍 ESTAÇÃO DE ORIGEM</label>
+                <label>📍 ONDE ESTÁS?</label>
                 <div class="input-row">
-                    <select id="origem" class="station-select">
-                        <option value="">Selecione a estação de partida...</option>
-                    </select>
-                    <button id="btnGeo" class="geo-btn" title="Usar estação mais próxima">📍</button>
+                    <input type="text" id="origem" list="paragens-lista" placeholder="Escolha a estação...">
+                    <button id="btnGeo" class="geo-btn" title="Estação mais próxima">📍</button>
                 </div>
-                <div id="origem-info" class="station-info"></div>
+                <datalist id="paragens-lista"></datalist>
             </div>
 
-            <!-- ESTAÇÃO DE DESTINO -->
             <div class="form-group">
-                <label>🎯 ESTAÇÃO DE DESTINO</label>
-                <select id="destino" class="station-select">
-                    <option value="">Selecione a estação de chegada...</option>
-                </select>
-                <div id="destino-info" class="station-info"></div>
+                <label>🕒 HORA DE PARTIDA</label>
+                <input type="time" id="horaRef">
             </div>
 
-            <!-- HORA DE PARTIDA -->
-            <div class="form-group">
-                <label>🕒 HORA DE PARTIDA DESEJADA</label>
-                <input type="time" id="horaRef" class="time-input">
-            </div>
-
-            <!-- BOTÕES -->
-            <button id="btnPesquisar" class="primary-btn">🔍 CONSULTAR HORÁRIOS</button>
-            <button id="btnSync" class="sync-btn">🔄 SINCRONIZAR DADOS DO PDF</button>
-            
-            <!-- STATUS DE LOCALIZAÇÃO -->
-            <div id="geo-status" class="geo-status"></div>
+            <button id="btnPesquisar" class="primary-btn">PESQUISAR NO PDF</button>
+            <button id="btnSync" class="sync-btn">SINCRONIZAR DADOS DO PDF</button>
         </div>
 
-        <!-- LOG DE DEBUG -->
         <div id="debug-log" class="console"></div>
-        
-        <!-- ÁREA DE RESULTADOS -->
         <div id="resultados" class="results-area"></div>
     </main>
 
+    <script src="js/stations.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
