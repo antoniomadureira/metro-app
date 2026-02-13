@@ -1,0 +1,493 @@
+:root {
+    --metro-blue: #005BAB;
+    --metro-bg: #F8F9FA;
+    --line-a: #005BAB;
+    --line-b: #E30613;
+    --line-c: #95C11E;
+    --line-d: #FFD400;
+    --line-e: #6E2E8B;
+    --line-f: #EE7D00;
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --warning: #f39c12;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--metro-bg);
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* CABEÇALHO */
+.main-header {
+    background: var(--metro-blue);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 1.3rem;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    font-weight: 200;
+}
+
+/* STATUS INDICATOR */
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: background 0.3s ease;
+}
+
+.status-dot.red {
+    background: var(--error);
+    box-shadow: 0 0 8px rgba(231, 76, 60, 0.5);
+}
+
+.status-dot.green {
+    background: var(--success);
+    box-shadow: 0 0 8px rgba(46, 204, 113, 0.5);
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* CARTÃO */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.line-decorator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(
+        to right,
+        var(--line-a),
+        var(--line-b),
+        var(--line-c),
+        var(--line-d),
+        var(--line-e),
+        var(--line-f)
+    );
+}
+
+/* TÍTULOS */
+h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: var(--metro-blue);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* GRUPOS DE FORMULÁRIO */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #777;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* LINHA DE INPUTS */
+.input-row {
+    display: flex;
+    gap: 8px;
+}
+
+/* SELECTS E INPUTS */
+.station-select,
+.time-input,
+input[type="text"] {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: white;
+}
+
+.station-select {
+    flex: 1;
+    cursor: pointer;
+}
+
+.station-select:focus,
+.time-input:focus,
+input[type="text"]:focus {
+    border-color: var(--metro-blue);
+    box-shadow: 0 0 0 3px rgba(0, 91, 171, 0.1);
+}
+
+/* INFORMAÇÃO DA ESTAÇÃO */
+.station-info {
+    margin-top: 8px;
+    min-height: 24px;
+}
+
+.station-detail {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.line-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+    min-width: 28px;
+}
+
+/* BOTÕES */
+.geo-btn {
+    background: #eee;
+    border: none;
+    padding: 0 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.geo-btn:hover {
+    background: #ddd;
+    transform: scale(1.05);
+}
+
+.geo-btn:active {
+    transform: scale(0.95);
+}
+
+.primary-btn {
+    width: 100%;
+    background: var(--metro-blue);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.primary-btn:hover {
+    background: #004a8f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 91, 171, 0.3);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+}
+
+.sync-btn {
+    width: 100%;
+    background: transparent;
+    border: 2px solid #ddd;
+    color: #777;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.sync-btn:hover {
+    border-color: var(--metro-blue);
+    color: var(--metro-blue);
+    background: rgba(0, 91, 171, 0.05);
+}
+
+/* STATUS DE GEOLOCALIZAÇÃO */
+.geo-status {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.geo-status .success {
+    color: var(--success);
+    display: block;
+}
+
+.geo-status .error {
+    color: var(--error);
+    display: block;
+}
+
+.geo-status .loading {
+    color: var(--warning);
+    display: block;
+}
+
+/* CONSOLE DE DEBUG */
+.console {
+    background: #1a1a1a;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+}
+
+.console div {
+    margin: 2px 0;
+    line-height: 1.4;
+}
+
+/* ÁREA DE RESULTADOS */
+.results-area {
+    margin-top: 20px;
+}
+
+/* CARTÃO DE ROTA */
+.route-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.route-header {
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.route-header h4 {
+    margin: 0 0 5px 0;
+    color: var(--metro-blue);
+    font-size: 1.2rem;
+}
+
+.route-subtitle {
+    margin: 0;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* PRÓXIMO COMBOIO */
+.next-train {
+    background: linear-gradient(135deg, var(--metro-blue), #0066cc);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.train-label {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.train-time {
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 10px 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.train-wait {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* LISTA DE HORÁRIOS */
+.schedule-list {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.schedule-list h5 {
+    margin: 0 0 15px 0;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.time-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.time-item:last-child {
+    margin-bottom: 0;
+}
+
+.time-item.highlight {
+    background: #e8f4fd;
+    border-left: 4px solid var(--metro-blue);
+    font-weight: 600;
+}
+
+.time-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.time-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.time-diff {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* CARTÕES DE INFORMAÇÃO */
+.info-card,
+.error-card,
+.loading-card {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.info-card {
+    background: #e8f4fd;
+    border-left: 4px solid var(--metro-blue);
+}
+
+.info-card h4 {
+    margin: 0 0 10px 0;
+    color: var(--metro-blue);
+}
+
+.error-card {
+    background: #fee;
+    border-left: 4px solid var(--error);
+    color: var(--error);
+    font-weight: 600;
+}
+
+.loading-card {
+    background: #fff9e6;
+    border-left: 4px solid var(--warning);
+    color: var(--warning);
+    font-weight: 600;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .card {
+        padding: 20px 15px;
+    }
+    
+    .train-time {
+        font-size: 2.5rem;
+    }
+    
+    h3 {
+        font-size: 1rem;
+    }
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.route-card,
+.info-card,
+.error-card,
+.loading-card {
+    animation: fadeIn 0.3s ease;
+}
+
+/* SCROLLBAR PERSONALIZADA PARA O CONSOLE */
+.console::-webkit-scrollbar {
+    width: 6px;
+}
+
+.console::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+.console::-webkit-scrollbar-thumb {
+    background: #00ff00;
+    border-radius: 3px;
+}
+
+.console::-webkit-scrollbar-thumb:hover {
+    background: #00cc00;
+}

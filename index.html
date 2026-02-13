@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Metro do Porto - Horários de Contingência</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">METRO <span>PORTO</span></div>
+            <div id="file-status" class="status-dot red" title="Status do PDF"></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <div class="line-decorator"></div>
+            <h3>🚇 Consulta de Horários</h3>
+            
+            <!-- ESTAÇÃO DE ORIGEM -->
+            <div class="form-group">
+                <label>📍 ESTAÇÃO DE ORIGEM</label>
+                <div class="input-row">
+                    <select id="origem" class="station-select">
+                        <option value="">Selecione a estação de partida...</option>
+                    </select>
+                    <button id="btnGeo" class="geo-btn" title="Usar estação mais próxima">📍</button>
+                </div>
+                <div id="origem-info" class="station-info"></div>
+            </div>
+
+            <!-- ESTAÇÃO DE DESTINO -->
+            <div class="form-group">
+                <label>🎯 ESTAÇÃO DE DESTINO</label>
+                <select id="destino" class="station-select">
+                    <option value="">Selecione a estação de chegada...</option>
+                </select>
+                <div id="destino-info" class="station-info"></div>
+            </div>
+
+            <!-- HORA DE PARTIDA -->
+            <div class="form-group">
+                <label>🕒 HORA DE PARTIDA DESEJADA</label>
+                <input type="time" id="horaRef" class="time-input">
+            </div>
+
+            <!-- BOTÕES -->
+            <button id="btnPesquisar" class="primary-btn">🔍 CONSULTAR HORÁRIOS</button>
+            <button id="btnSync" class="sync-btn">🔄 SINCRONIZAR DADOS DO PDF</button>
+            
+            <!-- STATUS DE LOCALIZAÇÃO -->
+            <div id="geo-status" class="geo-status"></div>
+        </div>
+
+        <!-- LOG DE DEBUG -->
+        <div id="debug-log" class="console"></div>
+        
+        <!-- ÁREA DE RESULTADOS -->
+        <div id="resultados" class="results-area"></div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
